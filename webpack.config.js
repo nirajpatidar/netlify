@@ -52,8 +52,14 @@ module.exports = {
                 }
             },
             {
-                test: /\.css$/i,
-                use: ["style-loader", "css-loader"],
+                test: /\.scss$/,
+                  use: [{
+                    loader: "style-loader"
+                  }, {
+                    loader: "css-loader" 
+                  }, {
+                    loader: "sass-loader"
+                  }]
             },
             {
                 test: /\.(?:ico|gif|png|svg|jpg|jpeg)$/i,
